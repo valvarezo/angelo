@@ -49,6 +49,18 @@
             color: #2C3E50;
             margin-right: 10px;
         }
+        .copy-button {
+            background-color: #2C3E50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .copy-button:hover {
+            background-color: #1A252F;
+        }
     </style>
 </head>
 <body>
@@ -56,28 +68,44 @@
         <h1>Datos para Transferencia</h1>
         <p>
             <span class="material-icons">person</span>
-            <span class="highlight">Nombre: </span> Angelo Diaz
+            <span class="highlight">Nombre: </span> Alejandro Jose Román Arias
+            <button class="copy-button" onclick="copyToClipboard('Alejandro Jose Román Arias')">Copiar</button>
         </p>
         <p>
             <span class="material-icons">fingerprint</span>
-            <span class="highlight">RUT: </span> 27.141.140-5
+            <span class="highlight">RUT: </span> 26.296.598-8
+            <button class="copy-button" onclick="copyToClipboard('26.296.598-8')">Copiar</button>
         </p>
         <p>
             <span class="material-icons">account_balance</span>
-            <span class="highlight">Banco: </span> Banco de Chile
+            <span class="highlight">Banco: </span> Copec Pay
+            <button class="copy-button" onclick="copyToClipboard('Copec Pay')">Copiar</button>
         </p>
         <p>
             <span class="material-icons">credit_card</span>
             <span class="highlight">Tipo de cuenta: </span> Cuenta Vista
+            <button class="copy-button" onclick="copyToClipboard('Cuenta Vista')">Copiar</button>
         </p>
         <p>
             <span class="material-icons">numbers</span>
-            <span class="highlight">Número de cuenta: </span> 00-013-10230-74
+            <span class="highlight">Número de cuenta: </span> 12629659801
+            <button class="copy-button" onclick="copyToClipboard('12629659801')">Copiar</button>
         </p>
         <p>
             <span class="material-icons">email</span>
             <span class="highlight">Email: </span> jesusarias2308@gmail.com
+            <button class="copy-button" onclick="copyToClipboard('jesusarias2308@gmail.com')">Copiar</button>
         </p>
     </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Copiado al portapapeles: ' + text);
+            }, function(err) {
+                console.error('Error al copiar: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
